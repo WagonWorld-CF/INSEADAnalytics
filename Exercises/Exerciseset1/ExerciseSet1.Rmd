@@ -89,20 +89,19 @@ pnl_plot(SPY)
 **Your Answers here:**
 <br>
 <br>
-_1. After entering source("dataSet1.R"), the code returns a line: [1] "\nDownloading ticker  AAPL  ..." This is where Apple returns are being downloaded from the dataSet1.R file._ 
+1. mytickers = c("SPY", "AAPL") from dataSet1.R
 <br>
 <br>
-_2. round(100*sum(StockReturns[,"AAPL"]),1)_
+2. Cumulative return: round(100*sum(StockReturns[,"AAPL"]),1) 
+<br>[1] 597.3 
+<br>Average daily return: round(100*mean(StockReturns[,"AAPL"]),3) 
+<br>[1] 0.148 
+<br>Standard deviation: round(100*sd(StockReturns[,"AAPL"]),3) 
+<br>[1] 2.389 
 <br>
-_[1] 597.3_
 <br>
-_round(100*mean(StockReturns[,"AAPL"]),3)_
+3. mytickers = c("SPY", "AAPL","YHOO")
 <br>
-_[1] 0.148_
-<br>
-_round(100*sd(StockReturns[,"AAPL"]),3)_
-<br>
-_[1] 2.389_
 <br>
 <hr>
 <hr>
@@ -142,24 +141,20 @@ We can also transpose the matrix of returns to create a new "horizontal" matrix.
 **Your Answers here:**
 <br>
 <br>
-_1. nrow(transposedData)
-<br>
-[1] 2
-<br>
-ncol(transposedData)
-<br>
-[1] 4034
-<br>
-It is similar to the above command that we executed for StockReturns. However, you will notice that the number of rows and columns are switched between the two matrices, due to the t() command._
+1. nrow(transposedData) 
+[1] 2 
+ncol(transposedData) 
+[1] 4034 
+It is similar to the above command that we executed for StockReturns. However, you will notice that the number of rows and columns are switched between the two matrices, due to the t() command. 
 <br>
 <br>
-_2. transposedData = t(StockReturns)
-<br>
-newport = apply (transposedData,2,mean)
-<br>
-names(newport) <- rownames(StockReturns[,c("SPY","AAPL")])
-<br>
+2. 
+```{r echo=FALSE, comment=NA, warning=FALSE, message=FALSE,results='asis',fig.align='center', fig=TRUE}
+transposedData = t(StockReturns) 
+newport = apply (transposedData,2,mean) 
+names(newport) <- colnames(transposedData) 
 pnl_plot(newport)
+```
 <hr>
 <hr>
 
@@ -175,8 +170,10 @@ This is an important step and will get you to think about the overall process on
 **Your Answers here:**
 <br>
 <br>
-_1. In order to re-do the analysis of the data, we must change the start date. From the head(StockReturns,1) command, the earliest date listed is 2001-01-03. Simply change this number to 2001-01-01._
+1. We change the start date. 
+<br> startDate = "2001-01-01"
 <br>
+2. Change the mytickers part of the code, adding more symboles to mytickers = c("SPY", "AAPL","YHOO","GOOG","GS","TSLA","FB","MSFT") 
 <br>
 
 <hr>
@@ -210,10 +207,11 @@ myData + StockReturns[1:40,]
 **Your Answers here:**
 <br>
 <br>
-_1. [1] 20_
+1. sum(myData != StockReturns[1:20,])
+<br>[1] 20
 <br>
 <br>
-_2. It provides an error because these two datasets are not in the same format. myData is one column with 20 rows that are comma separated in a string format, where as StockReturns is a 3 column by 20 row matrix. Thus, when attempting to do the add function, it is trying to add a string of words to a date number, which is impossible. In order for this to make sense, myData needs to be separated into different columns, based on the comma separation._
+2. It provides an error because these two datasets are not in the same format. myData is one column with 20 rows that are comma separated in a string format, where as StockReturns is a 3 column by 20 row matrix. Thus, when attempting to do the add function, it is trying to add a string of words to a date number, which is impossible. In order for this to make sense, myData needs to be separated into different columns, based on the comma separation.
 <hr>
 <hr>
 
