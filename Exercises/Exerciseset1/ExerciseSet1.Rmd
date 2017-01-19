@@ -213,7 +213,7 @@ myData + StockReturns[1:40,]
 _1. [1] 20_
 <br>
 <br>
-_2. It provides an error because these two datasets are not in the same format. myData is one column with 20 rows that are comma separated in a string format, where as StockReturns is a 3 column by 20 row matrix. Thus, when attempting to do the add function, it is trying to add a string of words to a date number, which is impossible. In order for this to make sense, myData needs to be separated into different columns, based on the comma separation.
+_2. It provides an error because these two datasets are not in the same format. myData is one column with 20 rows that are comma separated in a string format, where as StockReturns is a 3 column by 20 row matrix. Thus, when attempting to do the add function, it is trying to add a string of words to a date number, which is impossible. In order for this to make sense, myData needs to be separated into different columns, based on the comma separation._
 <hr>
 <hr>
 
