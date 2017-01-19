@@ -92,12 +92,17 @@ pnl_plot(SPY)
 _1. After entering source("dataSet1.R"), the code returns a line: [1] "\nDownloading ticker  AAPL  ..." This is where Apple returns are being downloaded from the dataSet1.R file._ 
 <br>
 <br>
-_> round(100*sum(StockReturns[,"AAPL"]),1)
-[1] 597.3
-> round(100*mean(StockReturns[,"AAPL"]),3)
-[1] 0.148
-> round(100*sd(StockReturns[,"AAPL"]),3)
-[1] 2.389_
+_2. round(100*sum(StockReturns[,"AAPL"]),1)_
+<br>
+_[1] 597.3_
+<br>
+_round(100*mean(StockReturns[,"AAPL"]),3)_
+<br>
+_[1] 0.148_
+<br>
+_round(100*sd(StockReturns[,"AAPL"]),3)_
+<br>
+_[1] 2.389_
 <br>
 <hr>
 <hr>
