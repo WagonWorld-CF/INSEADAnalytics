@@ -142,7 +142,15 @@ We can also transpose the matrix of returns to create a new "horizontal" matrix.
 **Your Answers here:**
 <br>
 <br>
+_1. nrow(transposedData)
 <br>
+[1] 2
+<br>
+ncol(transposedData)
+<br>
+[1] 4034
+<br>
+It is similar to the above command that we executed for StockReturns. However, you will notice that the number of rows and columns are switched between the two matrices, due to the t() command._
 <br>
 
 <hr>
